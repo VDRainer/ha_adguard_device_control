@@ -1,0 +1,62 @@
+# Command_line switches
+switch:
+  - platform: command_line
+    switches:
+      disallow_person1:
+        command_on: python scripts/adguard_clients.py person1 on
+        command_off: python scripts/adguard_clients.py person1 off
+        command_state: python scripts/adguard_clients.py person1 state
+        value_template: '{{ value == "True" }}'
+
+      disallow_person2:
+        command_on: python scripts/adguard_clients.py person2 on
+        command_off: python scripts/adguard_clients.py person2 off
+        command_state: python scripts/adguard_clients.py person2 state
+        value_template: '{{ value == "True" }}'
+
+# Example automations for time/workday switching
+automation:
+  ## person1 #################
+  - alias: disallow_person1_on
+    trigger:
+      - platform: time
+        at: "00:00:05"
+    condition:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
+    action:
+      - service: switch.turn_on
+        entity_id: switch.disallow_person1
+
+- alias: disallow_person1_off
+    trigger:
+      - platform: time
+        at: "06:00:00"
+    action:
+      - service: switch.turn_off
+        entity_id: switch.disallow_person1
+
+  ## person2 #################
+  - alias: disallow_person2_on
+    trigger:
+      - platform: time
+        at: "23:00:01"
+    action:
+      - service: switch.turn_on
+        entity_id: switch.disallow_person2
+
+- alias: disallow_person2_off
+    trigger:
+      - platform: time
+        at: "06:00:00"
+    action:
+      - service: switch.turn_off
+        entity_id: switch.disallow_person2
