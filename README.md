@@ -9,10 +9,11 @@ I'm not a python developer, more a trial and error scripter, so please use my co
 I'm one of the 4.2% HA Core users 🙂
 
 This reads a yaml config file, adds/removes device ip adresses to/from a list and posts them to the adguard home api.  
-The ip's are added/removed in adguard > Settings > DNS settings > Disallowed clients.
+The ip's are added/removed in adguard > Settings > DNS settings > Disallowed clients.  
+It is advisable to have fixed ip's or dhcp reservations for the clients.
 
 ## Installation
-Copy the adgaurd_clients.yaml to your home assistant config directory and edit it for your needs.
+Copy the adguard_clients.yaml to your home assistant config directory and edit it for your needs.
 
 Copy the adguard_clients.py to your home assistant config directory (i have it in a subfolder 'scripts') and edit the path to the adguard_clients.yaml file.  
 Also change the ip (or hostname, if your local dns is running properly) to your adguard instance.  
