@@ -3,15 +3,15 @@ switch:
   - platform: command_line
     switches:
       disallow_person1:
-        command_on: python scripts/adguard_clients.py person1 on
-        command_off: python scripts/adguard_clients.py person1 off
-        command_state: python scripts/adguard_clients.py person1 state
+        command_on: python scripts/adg_clients.py person1 on
+        command_off: python scripts/adg_clients.py person1 off
+        command_state: python scripts/adg_clients.py person1 state
         value_template: '{{ value == "True" }}'
 
       disallow_person2:
-        command_on: python scripts/adguard_clients.py person2 on
-        command_off: python scripts/adguard_clients.py person2 off
-        command_state: python scripts/adguard_clients.py person2 state
+        command_on: python scripts/adg_clients.py person2 on
+        command_off: python scripts/adg_clients.py person2 off
+        command_state: python scripts/adg_clients.py person2 state
         value_template: '{{ value == "True" }}'
 
 # Example automations for time/workday switching
