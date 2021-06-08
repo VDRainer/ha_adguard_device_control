@@ -17,7 +17,7 @@ Copy the adguard_clients.yaml to your home assistant config directory and edit i
 
 Copy the adg_clients.py to your home assistant config directory (i have it in a subfolder 'scripts') and edit the path to the adguard_clients.yaml file.  
 Also change the ip (or hostname, if your local dns is running properly) to your adguard instance.  
-Create a base64-encoded data for your username:password string to access adguard api and copy it in the adguard_clients.py.  
+Create a base64-encoded data for your username:password string to access adguard api and copy it in the adg_clients.py.  
 You can do this here: https://www.base64encode.org/ 
 
 ## Testing the script
