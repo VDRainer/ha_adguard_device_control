@@ -15,7 +15,7 @@ It is advisable to have fixed ip's or dhcp reservations for the clients.
 ## Installation
 Copy the adguard_clients.yaml to your home assistant config directory and edit it for your needs.
 
-Copy the adguard_clients.py to your home assistant config directory (i have it in a subfolder 'scripts') and edit the path to the adguard_clients.yaml file.  
+Copy the adg_clients.py to your home assistant config directory (i have it in a subfolder 'scripts') and edit the path to the adguard_clients.yaml file.  
 Also change the ip (or hostname, if your local dns is running properly) to your adguard instance.  
 Create a base64-encoded data for your username:password string to access adguard api and copy it in the adguard_clients.py.  
 You can do this here: https://www.base64encode.org/ 
@@ -24,7 +24,7 @@ You can do this here: https://www.base64encode.org/
 Open a terminal in ha, activate your python venv, go to your config directory.  
 Now you can run the script with:
 ```
-python path/to/adguard_clients.py key_from_config state/on/off
+python path/to/adg_clients.py key_from_config state/on/off
 ```
 See the example command_line switches in the home_assistant_config.yaml file.
 
