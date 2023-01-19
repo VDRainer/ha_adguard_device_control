@@ -21,7 +21,9 @@ Create a base64-encoded data for your username:password string to access adguard
 You can do this here: https://www.base64encode.org/ 
 
 ## Testing the script
-Open a terminal in ha, activate your python venv, go to your config directory.  
+Open a terminal in ha, activate your python venv if you're using HA core, go to your config directory.
+If you are using HAOS, you need to run the schript [inside the homeassistant container](https://community.home-assistant.io/t/sshing-from-a-command-line-sensor-or-shell-command/258731/3?u=vdrainer).
+
 Now you can run the script with:
 ```
 python path/to/adg_clients.py key_from_config state/on/off
